@@ -4,8 +4,7 @@
   "packageManager": "pnpm@10.7.0",
   "scripts": {
     "build": "vite-ssg build",
-    "dev": "vite --port 3333 --open",
-    "lint": "eslint .",
+    "dev": "vite --port 3433 --open",
     "preview": "vite preview",
     "preview-https": "serve dist",
     "test": "vitest",
@@ -17,32 +16,29 @@
     "sizecheck": "npx vite-bundle-visualizer"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.7",
     "@unhead/vue": "catalog:frontend",
     "@unocss/reset": "catalog:frontend",
     "@vueuse/core": "catalog:frontend",
     "nprogress": "catalog:frontend",
     "pinia": "catalog:frontend",
+    "tailwindcss": "^4.1.7",
     "vue": "catalog:frontend",
     "vue-i18n": "catalog:frontend",
     "vue-router": "catalog:frontend"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "catalog:dev",
     "@iconify-json/carbon": "catalog:dev",
     "@intlify/unplugin-vue-i18n": "catalog:build",
     "@shikijs/markdown-it": "catalog:build",
     "@types/markdown-it-link-attributes": "catalog:types",
     "@types/nprogress": "catalog:types",
-    "@unocss/eslint-config": "catalog:build",
     "@vitejs/plugin-vue": "catalog:build",
     "@vue-macros/volar": "catalog:dev",
     "@vue/test-utils": "catalog:dev",
     "beasties": "catalog:build",
     "cypress": "catalog:dev",
     "cypress-vite": "catalog:dev",
-    "eslint": "catalog:dev",
-    "eslint-plugin-cypress": "catalog:dev",
-    "eslint-plugin-format": "catalog:dev",
     "https-localhost": "catalog:dev",
     "lint-staged": "catalog:dev",
     "markdown-it-link-attributes": "catalog:build",
@@ -75,8 +71,5 @@
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
   }
 }

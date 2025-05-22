@@ -1,4 +1,5 @@
-@import './markdown.css';
+@import "./markdown.css";
+@import "tailwindcss";
 
 html,
 body,

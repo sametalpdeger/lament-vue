@@ -1,20 +1,19 @@
 <script setup lang="ts">
 defineOptions({
-  name: 'IndexPage',
-})
-const user = useUserStore()
-const name = ref(user.savedName)
+  name: "IndexPage",
+});
+const user = useUserStore();
+const name = ref(user.savedName);
 
-const router = useRouter()
+const router = useRouter();
 function go() {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
+  if (name.value) router.push(`/hi/${encodeURIComponent(name.value)}`);
 }
 
-const { t } = useI18n()
+const { t } = useI18n();
 useHead({
-  title: () => t('button.home'),
-})
+  title: () => t("button.home"),
+});
 </script>
 
 <template>
@@ -23,13 +22,18 @@ useHead({
       <div i-carbon-campsite inline-block />
     </div>
     <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
+      <a
+        rel="noreferrer"
+        href="https://github.com/antfu/vitesse"
+        target="_blank"
+      >
         Vitesse
       </a>
     </p>
     <p>
-      <em text-sm opacity-75>{{ t('intro.desc') }}</em>
+      <em text-sm opacity-75>{{ t("intro.desc") }}</em>
     </p>
+    <h1 class="text-3xl font-bold underline">Hello world!</h1>
 
     <div py-4 />
 
@@ -39,15 +43,11 @@ useHead({
       autocomplete="false"
       @keydown.enter="go"
     />
-    <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
+    <label class="hidden" for="input">{{ t("intro.whats-your-name") }}</label>
 
     <div>
-      <button
-        m-3 text-sm btn
-        :disabled="!name"
-        @click="go"
-      >
-        {{ t('button.go') }}
+      <button m-3 text-sm btn :disabled="!name" @click="go">
+        {{ t("button.go") }}
       </button>
     </div>
   </div>
