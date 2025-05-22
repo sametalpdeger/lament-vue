@@ -42,6 +42,7 @@
     "https-localhost": "catalog:dev",
     "lint-staged": "catalog:dev",
     "markdown-it-link-attributes": "catalog:build",
+    "prettier": "^3.5.3",
     "rollup": "catalog:build",
     "shiki": "catalog:build",
     "simple-git-hooks": "catalog:dev",
@@ -71,5 +72,13 @@
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue}": [
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
   }
 }
